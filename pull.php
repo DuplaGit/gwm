@@ -7,8 +7,6 @@ if (qtrans_getLanguage() == 'en') {
 } else {
 	$idioma = '';
 }
-
-
 if ($post_type == 'post' && !$navegar) {
 	include 'post.php';
 	
@@ -26,7 +24,6 @@ if ($post_type == 'post' && !$navegar) {
 	
 } else {
 	
-
 	$pag = get_page_by_path('inicio');
 	// $content = $pag->post_content;
 	$content = qtrans_use(qtrans_getLanguage(), $pag->post_content,false);

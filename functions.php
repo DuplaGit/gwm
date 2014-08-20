@@ -63,7 +63,6 @@ function get_excerpt_h1(){
 	global $post;
     $content = $post->post_content;//get_the_content();
 
- 
 	 $content = preg_replace('/\[([^_]+)\]/', '', $content);
 	 $content = apply_filters('the_content', $content);
 	$content = str_replace(']]>', ']]>', $content);

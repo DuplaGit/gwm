@@ -4,7 +4,9 @@ $(document).ajaxStart(function() {
 		    $('#wait').fadeOut();
 		    initGal();
 			if(sec_hash == 'seccion' && post_hash != 'galerias' && post_hash != 'patrocinadores' ){
-		     initialize();
+
+			$("#map_canvas").empty();
+		    initialize();
 		    
 		     // $(".locate").click(getLocation());
 
@@ -45,9 +47,10 @@ $('.qtrans_flag_es span').html('ESP');
 	var idioma = null;
 	sec_hash = window.location.hash.toString().split('/')[1];
 	post_hash = window.location.hash.toString().split('/')[2];
+	map_hash = window.location.hash.toString().split('/')[3];
 	
 		if (sec_hash) {
-			secciones(sec_hash,post_hash);
+			secciones(sec_hash,post_hash,map_hash);
 		}
 		if($(".idioma").is(".es")) {
 			idioma = 'es';
@@ -60,14 +63,15 @@ $('.qtrans_flag_es span').html('ESP');
 	$(window).bind('hashchange', function() {
 		sec_hash = window.location.hash.toString().split('/')[1];
 		post_hash = window.location.hash.toString().split('/')[2];
+		map_hash = window.location.hash.toString().split('/')[3];
 		
 		if (sec_hash) {
-			secciones(sec_hash,post_hash);
+			secciones(sec_hash,post_hash,map_hash);
 		}
 	
 	});
 
-	function secciones(sec_hash,post_hash) {
+	function secciones(sec_hash,post_hash,map_hash) {
 		// console.log(sec_hash);
 		
 		var today = new Date();
@@ -76,7 +80,8 @@ $('.qtrans_flag_es span').html('ESP');
  		$(".contenido").fadeOut(600,function(){
  			$(".contenido").html('');
  			// ?v='+today.getTime()
- 			$(this).load(themeurl+'/pull.php',{sec_hash:sec_hash,post_hash:post_hash,lang:idioma},function(){
+
+ 			$(this).load(themeurl+'/pull.php',{sec_hash:sec_hash,post_hash:post_hash,lang:idioma,gal:map_hash},function(){
  				$(".contenido").fadeIn(600);
  			});
  		});
@@ -103,9 +108,6 @@ $(".responsivo_btn").click(function(){
 		$("body,html").css("overflow","");
 		menu_on=false;
 	});
-	
-
-	
 	
 ////	centrar imagenes
 //	imagenes = $(".slides .slide img");

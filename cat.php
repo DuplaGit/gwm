@@ -254,6 +254,7 @@ foreach ($taxs as $tax) {
 		   $myposts = get_posts( $newargs );
 		   // print_r($myposts[0]);
 
+
 		  	$newlastLetter = strtoupper(substr($tax->name, 0,1));
 		  	// $newlastLetter = strtoupper(substr($tax->name, 0,1));
 
@@ -262,9 +263,9 @@ foreach ($taxs as $tax) {
 		        echo '<a id="'.$newlastLetter.'">';
 		        echo '<div class="galerias"><span class="morado">'.$newlastLetter.'</span><ul class="galerias_ul">';  
 	      	}
-	 		
+	 		$explode = explode('. ',$tax->name);
 	 		$lastLetter = $newlastLetter;	
-	 		$nombre = $tax->name;
+	 		$nombre = $explode[1].' '.$explode[0];//$tax->name;
 	      	$the_slug = $tax->slug;
 	      	echo '<li class="galerias_li"><a href="#!/'.$myposts[0]->post_name.'">'.$nombre.' / </a></li>';
 	     }
@@ -405,15 +406,15 @@ function initialize() {
 	if ($subcats) {
 		foreach ($subcats as $subcat) {
 	 
-			$queryMaps = new WP_Query("cat=$subcat->term_id&posts_per_page=-1");
-			while ( $queryMaps->have_posts() ) : $queryMaps->the_post();
-				$p = get_the_ID();
-				$taxs = get_the_terms($p, 'latlong');
+		$queryMaps = new WP_Query("cat=$subcat->term_id&posts_per_page=-1");
+		while ( $queryMaps->have_posts() ) : $queryMaps->the_post();
+			$p = get_the_ID();
+			$taxs = get_the_terms($p, 'latlong');
 				
 	      sort($taxs);
-	      echo '/*';
+	      // echo '/*';
 //	      print_r($subcat);
-		  echo '*/';
+		  // echo '*/';
 	$e++;
 	echo 'var tag'.$e.' = new google.maps.LatLng('.$taxs[0]->name.','.$taxs[1]->name.');'.PHP_EOL;
 	echo 'var image'.$e.' = "'.get_bloginfo('template_url').'/images/tags/tag'.$e.'.png";'.PHP_EOL;
@@ -887,15 +888,14 @@ $the_cat = $cat;
 				$queryMaps = new WP_Query("cat=$subcat->term_id&posts_per_page=-1");
 				while ( $queryMaps->have_posts() ) : $queryMaps->the_post();
 					$e++;
+					global $post;
         echo '<div id="marker'.$e.'" p_id="'.get_the_ID().'" m_id="'.$e.'">';
 
         $foto = get_post_thumbnail_id();
         $img = wp_get_attachment_image_src($foto, 'thumbnail');
         echo '<div class="ficha_mapa" style="width:270px;"><img style="float:left;" src="'.$img[0].'" width="110">
-        <div style="float:right; width:150px;"><a href="#!/'; 
-        // the_permalink(); 
-        echo $post->post_name;
-        echo'">'.get_the_title().'</a><br />'.get_excerpt_h1().'</div></div>';
+        <div style="float:right; width:150px;"><a href="#!/'. $post->post_name.'">'.$post->post_title.'</a>';
+        echo '<br />'.get_excerpt_h1().'</div></div>';
         
         echo '</div>';
 		
