@@ -1,0 +1,895 @@
+/*
+Theme Name: GalleryWeekendMexico Dupla
+Theme URI: 
+Author: Dupla MX
+Author URI: http://dupla.mx/
+*/
+
+@charset "UTF-8";
+/* CSS Document */
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+body {
+	color: #000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	line-height: 18px;
+}
+a {
+	text-decoration: none;
+	color: #4466BB;
+	border:none;
+}
+
+
+a:hover {
+	color: #aa1188;
+}
+
+
+img{
+	border:none;
+}
+
+
+
+
+h1{
+	margin: 0;
+	padding: 0;
+	font-size: 24px;
+	margin-bottom: 10px;
+	color: #4466BB;
+	line-height: 30px;
+}
+h2 {
+	margin: 0;
+	padding: 0;
+	font-size: 21px;
+	font-weight: normal;
+	color: #4466BB;
+	line-height: 30px;
+}
+
+h5{
+	max-width: 820px;
+}
+
+h6{
+	font-size: 10px;
+	font-style: italic;
+}
+li{
+	list-style: none!important;
+}
+
+.clear{
+	clear: both;
+}
+
+/*******************************************   header  *******************************************/
+
+/* header / footer */
+.header, .footer {
+	background: #FFF;
+	position: fixed;
+	width: 100%;
+	height: 50px;
+	font-size: 14px;
+	z-index: 12;
+}
+.header_interior, .footer_interior {
+	width: 1024px;
+	height: 100%;
+	position: relative;
+	margin: auto;
+}
+/* header */
+.header {
+	border-bottom: 1px solid #EEE;
+	top: 0;
+	text-transform: uppercase;
+}
+.header_interior {
+	padding-top: 20px;
+}
+.menu_ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 14px;
+}
+.menu_li {
+	float: left;
+	padding: 0px 10px;
+}
+.menu_li:first-child {
+	padding-left: 0;
+}
+.menu_li:last-child {
+	padding-right: 0;
+}
+
+.active{
+	color:#aa1188;	
+}
+
+.menu_li:hover .submenu_ul {
+	display: block;
+	margin-top: 10px;
+}
+.submenu_ul {
+	display: none;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 13px;
+}
+.submenu_li {
+	text-align: center;
+	background: #fff;
+	width: 100%;
+	margin-bottom: 1px;
+}
+.redes_ul input[type=text] {
+	border: none;
+	border-bottom: solid 1px #4466BB;
+	width: 168px;
+	font-size: 14px;
+	margin: 6px 0;
+	padding: 0;
+	display: block;
+	float: left;
+}
+.busqueda {
+	list-style: none;
+	height: 20px;
+	width: 192px;
+	margin-top: 0px;
+	display: block;
+}
+.lupa {
+	background: url(images/busqueda.png) 0px 4px no-repeat;
+	border: none;
+	width: 23px;
+	height: 26px;
+	cursor: pointer;
+	background-size: 23px;
+}
+.redes_ul {
+	position: absolute;
+	right: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.redes_ul li {
+	float: left;
+}
+.redes_li {
+	float: left;
+	margin-right: 5px;
+	width: 25px;
+	height: 25px;
+}
+.redes_li a {
+	display: inline-block;
+}
+.fb, .tw, .mail, .g_plus {
+	width: 25px;
+	height: 25px;
+}
+.fb {
+	background: url(images/overs.png) -56px -2px no-repeat;
+	background-size: 245px;
+}
+.fb:hover {
+	background: url(images/overs.png) -56px -29px no-repeat;
+	background-size: 245px;
+}
+.tw {
+	background: url(images/overs.png) -28px -2px no-repeat;
+	background-size: 245px;
+}
+.tw:hover {
+	background: url(images/overs.png) -28px -29px no-repeat;
+	background-size: 245px;
+}
+.mail {
+	background: url(images/overs.png) 0px -2px no-repeat;
+	background-size: 245px;
+}
+.mail:hover {
+	background: url(images/overs.png) 0px -29px no-repeat;
+	background-size: 245px;
+}
+.g_plus {
+	background: url(images/overs.png) -84px -2px no-repeat;
+	background-size: 245px;
+}
+.g_plus:hover {
+	background: url(images/overs.png) -84px -29px no-repeat;
+	background-size: 245px;
+}
+.idioma {
+	padding: 4px 0 0 6px;
+}
+
+/*******************************************   wrapper  *******************************************/
+/* wrapper */
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	z-index: 1;
+	position: relative;
+	top: 0;
+	background: #fff;
+	z-index: 11;
+}
+
+.contenido{
+	padding: 77px 0px;
+	width: 1024px;
+	background: #FFF;
+	margin:auto;
+	min-height: 100%;
+}
+
+.contenido img{
+	max-width: 100%;
+}
+
+#map_canvas img{
+	max-width:none;
+}
+#wait{
+	z-index: 100;
+	position: absolute;
+	top: 43%;
+	left: 48%;
+	display: none;
+   	width: 32px;
+   	height: 32px;
+}
+
+#wait img{
+	width: 100%;
+}
+
+/*******************************************   interiores  *******************************************/
+/*info*/
+.info_text{
+	max-width: 820px; 
+}
+/*galerias*/
+.galerias{
+    font-size: 21px;
+    color: #4466BB;
+    margin-bottom: 20px;
+    max-width: 820px;
+}
+.morado{
+    color: #aa1188;
+    margin: 0;
+    padding: 0;
+}
+.galerias_ul{
+    margin: 0;
+    padding: 0;
+    line-height: 30px;
+}
+.galerias_li{
+    margin-right: 5px;
+    display: initial;
+}
+.galerias_li a{
+}
+/*artistas*/
+.morado li{
+    float: left;
+}
+.morado a{
+    color: #aa1188;
+    margin: 0px 5px 0px 0px;
+}
+
+.az{
+    margin-bottom: 60px;
+    font-size: 21px;
+    text-transform: uppercase;
+    max-width: 820px;
+}
+
+/*interior galeria*/
+
+
+.slider_artistas {
+	width: 580px;
+	height: 450px;
+	float: left;
+	position: relative;
+
+	/* background:#ccc; */
+	margin-right: 10px;
+	/* margin-bottom: 30px; */
+}
+
+.slider_artistas .slides {
+	width: 100%;
+	height: 450px;
+	position: relative;
+}
+
+.slide{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	text-align: left;
+	display: none;
+	cursor: pointer;
+}
+
+.slides img {
+	max-width: 100%;
+	max-height: 92%;
+}
+
+.pie_foto{
+	color: #999;
+	margin-top: 6px;
+	bottom: 0;
+	position: absolute;
+}
+.puntos{
+    position: absolute;
+    bottom: 0px;
+    color: #999;
+    left: 85%;
+}
+.puntos ul{
+    margin: 0;
+    padding: 0;
+}
+.puntos li{
+    float: left;
+    margin-right: 9px;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.puntos_activo{
+	color: #000;
+	border-top: 1px solid;
+	margin-top: -1px;
+}
+.bloque1{
+    width: 370px;
+    float: left;
+}
+.bloque1 h1, .bloque1 h2{
+	margin-bottom: 5px;
+}
+
+
+.bloque2{
+	width: 600px;
+	/* margin-top: 15px; */
+	float: left;
+}
+.bloque2 ul{
+	margin:0;
+	padding: 0;
+	margin-bottom: 10px;
+}
+
+
+
+/*mapa*/
+
+/*STYLE DEL MAPA DE LA PAGINA QUE ESTA ARRIBA*/
+
+#map_canvas{
+	background-color: #333333;
+	width: 100%;
+	height: 450px;
+}
+.prueba{
+	display:none;
+	max-width:100%;
+	.overflow: scroll;
+}
+.prueba p{
+	max-height:600px;
+	text-indent:18px;
+}
+.prueba img{
+	max-width:100%;
+	height: auto;
+}
+
+.ruta_r{
+	text-transform: uppercase;
+	float: right;
+	color: #4466BB;
+	font-family: arial;
+	cursor:pointer;
+	display: none;
+}
+.ruta_r:hover{
+	color: #aa1188;
+}
+
+.ficha_mapa h1{
+	font-size: 13px;
+	margin-bottom: 0px;
+}
+
+.locate_me {
+	width: 36px;
+	height: 36px;
+	background: url("images/locate-icon.png") 0 0 no-repeat;
+	background-size: 100%;
+	position: relative;
+	top: 46px;
+	left: 13px;
+	z-index: 1;
+	cursor: pointer;
+	float: left;
+}
+.newspaper h1 {
+	display: none;
+}
+
+.newspaper {
+	margin-top: 10px;
+	text-align: left;
+}
+
+.newspaper a {
+	display: block;
+	text-align: left;
+	margin: 0;
+	margin-bottom: 1px;
+	font-family: Arial;
+	color: #aa1188;
+	margin-top: 10px;
+}
+
+.newspaper li {
+	list-style-type: decimal-leading-zero!important;
+	margin: 0;
+	padding: 0;
+	font-family: Arial;
+	color: #4466BB;
+	cursor: pointer;
+	width: 80%;
+	margin-left: 25px;
+}
+.newspaper ol li:hover {
+	color: #aa1188;
+}
+
+.newspaper ol{
+	margin: 0;
+	padding: 0;
+}
+
+.conjunto{
+	margin-bottom: 10px;
+	width: 25%;
+	float: left;
+}
+
+.submenu{}
+.submenu a{
+	margin: 0px;
+	padding-right: 16px;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: left;
+	margin-top: 50px;
+	text-transform: uppercase;
+}
+
+.submenu_responsive{
+	display: none;
+}
+
+.responsivo{
+	display: none;
+}
+
+.responsivo.logo-fonca{
+	
+}
+.responsivo.logo-fonca a{
+	
+}
+
+.menu_responsivo{
+    border-bottom: 1px solid #EEE; top: 0;
+	
+    height: 50px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background: #fff;
+    left: 0;
+    padding-top: 10px;
+}
+
+
+.columnas{
+	columns:100px 3;
+-webkit-columns:100px 3; /* Safari and Chrome */
+-moz-columns:100px 3; /* Firefox */
+}
+/*******************************************   footer  *******************************************/
+
+/* footer */
+.footer {
+	height: 43px;
+	border-top: 1px solid #EEE;
+	bottom: 0;
+	font-style: italic;
+	font-size: 12px;
+}
+.logo_codigo {
+	width: 145px;
+	height: 37px;
+	background: url(images/logo_codigo.png) no-repeat;
+	background-size: 145px;
+	float: left;
+}
+.newletter {
+	float: right;
+	right: 0;
+	margin-top: 15px;
+	margin-right: 20px;
+}
+.footer input[type=text], .footer input[type=email] {
+	font-variant: bold;
+	border: none;
+	border-bottom: solid 1px #333333;
+}
+.footer input[type=submit] {
+	font-family: Sansation, Arial;
+	border: none;
+	background: transparent;
+}
+.footer .menu_ul{
+	float:right;
+	margin-top: 10px;
+}
+.logo-fonca{
+	width:200px;
+	height:14px;
+	float: right;
+	margin: 18px 0 0 30px;
+}
+.logo-fonca a{
+	
+	background:url(images/fonca_conaculta.jpg);
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}
+/*******************************************   MENU RESPONSIVO  *******************************************/
+
+.responsivo_btn{
+	width: 30px;
+	height: 20px;
+	background:url(images/overs_menu.png) no-repeat;
+	background-size: 60px;
+	position: relative;
+	display:none;
+	z-index: 1;
+	cursor: pointer;
+	left: 10px;
+	top: 14px;
+}
+.responsive {
+	position: fixed;
+	width: 335px;
+	height: 100%;
+	background: #333;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	display: none;
+	color: #fff;
+	text-transform:uppercase;
+	overflow-y: scroll;
+	padding-top: 10px;
+}
+.responsive .menu_li a {
+	color: #fff;
+	/* margin-left: 10px; */
+	display: inline-block;
+	width: 310px;
+	height: 19px;
+	padding: 14px 0 14px 10px;
+}
+.responsive a:hover {
+	/* background: #000; */
+}
+.responsive .menu_li {
+	border-bottom: 1px solid #000;
+}
+.responsive .menu_li:first-child {
+	padding: 15px 0;
+}
+.responsive .menu_li:active {
+	/* background: #f00; */
+}
+.responsive .lupa {
+	background: url(images/busqueda_r.png);
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	top: 3px;
+	left: 15px;
+	width: 18px;
+	height: 18px;
+	background-size: 19px;
+}
+.responsive .busqueda input[type=text] {
+	background-color: #fff;
+	height: 30px;
+	padding-left: 30px;
+	margin-left: 10px;
+	width: 171px;
+	box-shadow: 2px 2px 0 #828181 inset;
+}
+.responsive .busqueda input[type=text] {
+	border: 0;
+	border-radius: 15px;
+	font-family: Sansation, Arial;
+	height: 20px;
+	font-size: 13px;
+}
+
+/*****************************   FIN MENU RESPONSIVO ****************************/
+
+
+
+/*************************************** 	RESPONSIVO ****************************************/
+
+/*IPAD HORIZONTAL*/
+@media screen and (max-width: 1050px) {
+	.contenido, .header_interior, .footer_interior{
+		width: 95%;
+	}
+}
+
+/*IPAD VERTICAL*/
+@media screen and (max-width: 1026px) {
+	.redes {
+		width: 190px;
+		left: 553px;
+	}
+	.redes ul .busqueda {
+		display: none;
+	}
+	.submenu a{
+		font-size: 12px;
+		padding-right: 14px;
+	}
+
+	.ruta_r{
+		margin-top: 30px;
+	}
+
+	.busqueda{
+		display: none;
+	}
+	.idioma{
+		padding: 0;
+	}
+	.bloque1, .bloque2{
+		width: 100%;
+	}
+
+}
+
+/*IPHONE HORIZONTAL*/
+@media screen and (max-width: 700px) {
+	.responsivo_btn{
+		display:block;
+	}
+	.submenu{
+		display:none;
+	}
+
+	.ruta_r{
+		margin-top: inherit;
+	}
+
+	.responsive, .responsivo {
+		display: block;
+		margin: 0px 15px 0px 0px;
+	}
+
+.logo-fonca{
+	background-image: url(images/fonca_conaculta.jpg);
+	/*width: 100%;*/
+	height: 20px;
+	display: inline-block;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	float: right;
+	margin-top: 12px;
+	}
+
+	.puntos{
+		right: 10px;
+		left: inherit;
+	}
+
+/*.logo-fonca a:first-child{
+	display: none;
+}*/
+
+	.busqueda{
+		display: block;
+	
+		position: relative;
+}
+	.idioma{
+		margin-top: 14px;
+		font-size: 14px;
+		text-transform: uppercase;
+		margin-right: 15px;
+	}
+	.logo_codigo {
+		width: 75px;
+		height: 37px;
+		background: url(images/logo_codigo.png) no-repeat;
+		background-size: 75px;
+		float: right;
+		margin-right: 15px
+	}
+
+
+	.header, .footer{
+		display: none;
+	}
+
+	.menu_ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-size: 14px;
+	
+}
+	.menu_li {
+		width: 100%;
+		padding: 0;
+	}
+	#map_canvas{
+		width: 100%;
+		height: 230px;
+		margin-top: 0px;
+	}
+	.locate_me{
+    	top: 37px;
+		width: 29px;
+    	height: 29px;
+    	left: 5px;
+	}
+
+	.slider_artistas{
+		height: 100%;
+		width: 100%;
+	}
+	.slider_artistas .slides{
+		height: 300px;
+	}
+	.morado li{
+		margin-right: 5px;
+		margin-bottom: 5px
+	}
+
+	.submenu_responsive {
+		display: block;
+		list-style: none;
+		float: left;
+		width: 22%;
+		margin-right: 19px;
+	
+		min-height: 100%;
+}
+
+	.submenu_responsive h1, .newspaper h1 {
+		line-height: 50px;
+		font-family: Arial;
+		font-weight: lighter;
+		font-size: 18px;
+		text-transform: uppercase;
+		display: block;
+	
+}
+
+	.submenu_responsive a {
+		display: block;
+		margin-bottom: 5px;
+		font-size: 12px;
+		font-family: Arial, Helvetica, sans-serif;
+	
+		text-transform: capitalize;
+}
+	.conjunto {
+    width: 50%;
+	
+}
+	.newspaper {
+    float: left;
+	
+    width: 65%;
+    margin-top: 0;
+}
+	.newspaper a, .newspaper ol {
+		display: block;
+		text-align: left;
+		margin: 0;
+		font-size: 12px;
+	}
+
+	.newspaper a{
+		margin-top: 10px;
+	}
+
+	.columnas{
+		columns: 100px 2;
+	-webkit-columns: 100px 2;
+	-moz-columns: 100px 2;
+	}
+
+}
+
+/*IPHONE VERTICAL*/
+@media screen and (max-width: 469px) {
+	#map_canvas{
+		width: 100%;
+		height: 230px;
+		margin-top: 0px;
+	}
+	.slider_artistas{
+		height: 100%;
+	
+		margin-right: 0;
+	}
+	.galerias{
+		margin-top: 20px;
+	}
+
+	.newspaper{
+		width: 60%;
+	}
+
+	.conjunto{
+		width: 100%;
+	}
+
+	.columnas{
+		columns: inherit;
+	-webkit-columns: inherit;
+	-moz-columns: inherit;
+	}
+}
+
+
+h3{
+	margin: 0;
+	padding: 0;
+	font-size: 24px;
+	margin-bottom: 10px;
+	color: #aa1188;
+	line-height: 30px;
+}
+
