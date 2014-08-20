@@ -3,7 +3,7 @@ $(document).ajaxStart(function() {
 		}).ajaxComplete(function() {
 		    $('#wait').fadeOut();
 		    initGal();
-			if(sec_hash == 'seccion' && post_hash != 'galerias' && post_hash != 'patrocinadores' ){
+			if(sec_hash == 'seccion' && post_hash != 'galerias' && post_hash != 'artistas' && post_hash != 'patrocinadores' ){
 		     initialize();
 		    
 		     // $(".locate").click(getLocation());

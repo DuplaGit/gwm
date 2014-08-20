@@ -64,18 +64,18 @@ function get_excerpt_h1(){
     $content = $post->post_content;//get_the_content();
 
  
-	 $content = preg_replace('/\[([^_]+)\]/', '', $content);
-	 $content = apply_filters('the_content', $content);
-	$content = str_replace(']]>', ']]>', $content);
-	$content = preg_replace('/<a/', '<!--bloque--><a', $content);	
+   $content = preg_replace('/\[([^_]+)\]/', '', $content);
+	$content = apply_filters('the_content', $content);
+	// $content = str_replace(']]>', ']]>', $content);
+	// $content = preg_replace('/<a/', '<!--bloque--><a', $content);	
 
 	$bloques = explode('<!--more-->', $content);
-	
+	// print_r($bloques);
 	
 	// $bloques[1] = trim(preg_replace( '/\s+/', ' ', $bloques[1]));
-	$trimed_content =  substr($bloques[1], 0, strpos($bloques[1], '</a>'));
-	
-  return $content;
+	$trimed_content =  substr($bloques[2], 0, strpos($bloques[2], '</a>')+4);
+	$trimed_content = strip_tags($trimed_content,'<br><a>'); 
+   return $trimed_content;
 }
 
 
