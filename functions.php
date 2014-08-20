@@ -60,10 +60,11 @@ function get_excerpt($count){
 
 
 function get_excerpt_h1(){
-  $content = get_the_content();
-  
-	 $content = preg_replace('/\[([^_]+)\]/', '', $content);
-	 $content = apply_filters('the_content', $content);
+	global $post;
+    $content = $post->post_content;//get_the_content();
+  	print_r($post);
+	 // $content = preg_replace('/\[([^_]+)\]/', '', $content);
+	 // $content = apply_filters('the_content', $content);
 	// $content = str_replace(']]>', ']]>', $content);
 	// $content = preg_replace('/<a/', '<!--bloque--><a', $content);	
 	
