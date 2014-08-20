@@ -62,7 +62,8 @@ function get_excerpt($count){
 function get_excerpt_h1(){
 	global $post;
     $content = $post->post_content;//get_the_content();
-  	print_r($post);
+    // version luis
+  	// print_r($post);
 	 // $content = preg_replace('/\[([^_]+)\]/', '', $content);
 	 // $content = apply_filters('the_content', $content);
 	// $content = str_replace(']]>', ']]>', $content);
