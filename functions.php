@@ -62,20 +62,20 @@ function get_excerpt($count){
 function get_excerpt_h1(){
 	global $post;
     $content = $post->post_content;//get_the_content();
-  print_r($post);
+
+ 
 	 $content = preg_replace('/\[([^_]+)\]/', '', $content);
 	 $content = apply_filters('the_content', $content);
 	$content = str_replace(']]>', ']]>', $content);
 	$content = preg_replace('/<a/', '<!--bloque--><a', $content);	
-	
-	
+
 	$bloques = explode('<!--more-->', $content);
 	
 	
 	// $bloques[1] = trim(preg_replace( '/\s+/', ' ', $bloques[1]));
 	$trimed_content =  substr($bloques[1], 0, strpos($bloques[1], '</a>'));
 	
-  return $trimed_content;
+  return $content;
 }
 
 
